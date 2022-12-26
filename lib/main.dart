@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_quiz/screens/quiz_screen.dart';
 
 void main() {
   runApp(
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("나만의 퀴즈 만들기"),
       ),
-      body: Column(),
+      body: QuizScreen(),
     );
   }
 }
