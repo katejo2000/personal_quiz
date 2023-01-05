@@ -15,13 +15,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int questionIndex = 0;
+
+  void answerPressed() {
+    questionIndex++;
+    print(questionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("나만의 퀴즈 만들기"),
       ),
-      body: QuizScreen(),
+      body: QuizScreen(
+        answerPressed: answerPressed,
+      ),
     );
   }
 }
