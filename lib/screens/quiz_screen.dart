@@ -5,9 +5,11 @@ class QuizScreen extends StatelessWidget {
   const QuizScreen({
     Key? key,
     required this.answerPressed,
+    required this.questionIndex,
   }) : super(key: key);
 
   final Function answerPressed;
+  final int questionIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -15,23 +17,23 @@ class QuizScreen extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 100),
-          Text(questionList[0]["questionText"]),
+          Text(questionList[questionIndex]["questionText"]),
           const SizedBox(height: 150),
           ElevatedButton(
             onPressed: () => answerPressed(),
-            child: Text(questionList[0]["answers"][0]["text"]),
+            child: Text(questionList[questionIndex]["answers"][0]["text"]),
           ),
           ElevatedButton(
             onPressed: () => answerPressed(),
-            child: Text("대답 2"),
+            child: Text(questionList[questionIndex]["answers"][1]["text"]),
           ),
           ElevatedButton(
             onPressed: () => answerPressed(),
-            child: Text("대답 3"),
+            child: Text(questionList[questionIndex]["answers"][2]["text"]),
           ),
           ElevatedButton(
             onPressed: () => answerPressed(),
-            child: Text("대답 4"),
+            child: Text(questionList[questionIndex]["answers"][3]["text"]),
           ),
         ],
       ),

@@ -18,7 +18,9 @@ class _MyAppState extends State<MyApp> {
   int questionIndex = 0;
 
   void answerPressed() {
-    questionIndex++;
+    setState(() {
+      questionIndex++;
+    });
     print(questionIndex);
   }
 
@@ -30,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       ),
       body: QuizScreen(
         answerPressed: answerPressed,
+        questionIndex: questionIndex,
       ),
     );
   }
